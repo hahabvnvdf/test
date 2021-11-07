@@ -8,6 +8,6 @@ $(document).ready(function () {
 
 function modifyLocalStorage() {
   $.get("http://minhmun.ddns.net:1814/", function (data, status) {
-    localStorage;
+    console.log(data);
   });
 }
