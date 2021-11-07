@@ -1,8 +1,13 @@
 $(document).ready(function () {
+  modifyLocalStorage();
   setInterval(function () {
     /* your stuff */
-    $.get("http://minhmun.ddns.net:1814/", function (data, status) {
-      console.log(data);
-    });
+    modifyLocalStorage();
   }, 20000);
 });
+
+function modifyLocalStorage() {
+  $.get("http://minhmun.ddns.net:1814/", function (data, status) {
+    localStorage;
+  });
+}
