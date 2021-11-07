@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  modifyLocalStorage();
+  console.log("hehe");
   setInterval(function () {
     /* your stuff */
     modifyLocalStorage();
