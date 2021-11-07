@@ -1,15 +1,11 @@
 $(document).ready(function () {
   setInterval(
     (function hello() {
-      console.log("world");
-      return hello;
+      $.get("http://minhmun.ddns.net:1814/", function (data, status) {
+        console.log(data);
+        console.log(localStorage.getItem("api_token"));
+      });
     })(),
-    5000
+    30000
   );
 });
-
-function modifyLocalStorage() {
-  $.get("http://minhmun.ddns.net:1814/", function (data, status) {
-    console.log(data);
-  });
-}
