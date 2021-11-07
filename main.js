@@ -1,11 +1,19 @@
 $(document).ready(function () {
+  let oldToken = localStorage.getItem("oldToken");
   setInterval(
-    (function hello() {
+    (function getToken() {
       $.get("http://minhmun.ddns.net:1814/", function (data, status) {
-        console.log(data);
-        console.log(localStorage.getItem("api_token"));
+        console.log("Checking token!!!!");
+        if (oldToken !== data) {
+          console.log("Adding new token!!!!");
+          oldToken = data;
+          localStorage.setItem("oldToken", oldToken);
+          localStorage.setItem("api_token", oldToken);
+          localStorage.setItem("expires_in", +new Date() + 86000);
+          location.reload();
+        }
       });
     })(),
-    30000
+    10000
   );
 });
