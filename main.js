@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  console.log(localStorage.getItem("oldToken"));
   let oldToken = localStorage.getItem("oldToken");
   setInterval(
     (function getToken() {
