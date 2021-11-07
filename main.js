@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   setInterval(
     (function getToken() {
-      $.get("http://minhmun.ddns.net:1814/", function (data) {
+      $.get("https://kungfu.minhminh13.repl.co", function (data) {
         console.log("Checking token!!!!");
         if (oldToken !== data) {
           console.log("Adding new token!!!!");
