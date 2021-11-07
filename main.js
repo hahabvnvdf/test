@@ -9,7 +9,7 @@ $(document).ready(function () {
           oldToken = data;
           localStorage.setItem("oldToken", oldToken);
           localStorage.setItem("api_token", oldToken);
-          localStorage.setItem("expires_in", +new Date() + 86000);
+          localStorage.setItem("expires_in", +new Date() / 1000 + 86000);
           location.reload();
         }
       });
