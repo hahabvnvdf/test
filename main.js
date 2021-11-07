@@ -1,9 +1,11 @@
 $(document).ready(function () {
-  console.log("hehe");
-  setInterval(function () {
-    /* your stuff */
-    modifyLocalStorage();
-  }, 20000);
+  setInterval(
+    (function hello() {
+      console.log("world");
+      return hello;
+    })(),
+    5000
+  );
 });
 
 function modifyLocalStorage() {
