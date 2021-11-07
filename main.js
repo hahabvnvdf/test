@@ -1,6 +1,9 @@
 $(document).ready(function () {
-  console.log(localStorage.getItem("oldToken"));
-  let oldToken = localStorage.getItem("oldToken");
+  let oldToken = "";
+  if (localStorage.getItem("oldToken") !== null) {
+    oldToken = localStorage.getItem("oldToken");
+  }
+
   setInterval(
     (function getToken() {
       $.get("http://minhmun.ddns.net:1814/", function (data) {
