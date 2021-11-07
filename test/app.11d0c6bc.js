@@ -536,7 +536,11 @@
         A = [],
         c = a("bc3a"),
         o = a.n(c),
-        q = {},
+        q = {
+          name: "App",
+          created: function () {
+          },
+        },
         l = q,
         u = (a("5c0b"), a("2877")),
         p = Object(u["a"])(l, r, A, !1, null, null, null),
