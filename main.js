@@ -27,18 +27,22 @@ ready(function () {
         method: "GET",
         headers: {},
       };
-      fetch("https://kungfu.minhminh13.repl.co", opts).then(function (body) {
-        console.log("Checking token!!!!");
-        console.log(body);
-        if (oldToken !== body) {
-          // console.log("Adding new token!!!!");
-          // oldToken = data;
-          // localStorage.setItem("oldToken", oldToken);
-          // localStorage.setItem("api_token", oldToken);
-          // localStorage.setItem("expires_in", +new Date() / 1000 + 86000);
-          // location.reload();
-        }
-      });
+      fetch("https://kungfu.minhminh13.repl.co", opts)
+        .then(function (response) {
+          console.log(response.json());
+        })
+        .then(function (body) {
+          console.log("Checking token!!!!");
+          console.log(body);
+          if (oldToken !== body) {
+            // console.log("Adding new token!!!!");
+            // oldToken = data;
+            // localStorage.setItem("oldToken", oldToken);
+            // localStorage.setItem("api_token", oldToken);
+            // localStorage.setItem("expires_in", +new Date() / 1000 + 86000);
+            // location.reload();
+          }
+        });
     })(),
     1000
   );
