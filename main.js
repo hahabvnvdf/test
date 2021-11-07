@@ -1,7 +1,3 @@
-// $(document).ready(function () {
-//
-// });
-
 function ready(callback) {
   // in case the document is already rendered
   if (document.readyState != "loading") callback();
@@ -23,26 +19,25 @@ ready(function () {
 
   setInterval(
     (function getToken() {
-      var opts = {
-        method: "GET",
-        headers: {},
-      };
-      fetch("https://kungfu.minhminh13.repl.co", opts)
-        .then(function (response) {
-          console.log(response.json());
-        })
-        .then(function (body) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://kungfu.minhminh13.repl.co");
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const body = xhr.responseText;
           console.log("Checking token!!!!");
-          console.log(body);
           if (oldToken !== body) {
-            // console.log("Adding new token!!!!");
-            // oldToken = data;
-            // localStorage.setItem("oldToken", oldToken);
-            // localStorage.setItem("api_token", oldToken);
-            // localStorage.setItem("expires_in", +new Date() / 1000 + 86000);
-            // location.reload();
+            console.log("Adding new token!!!!");
+            oldToken = body;
+            localStorage.setItem("oldToken", oldToken);
+            localStorage.setItem("api_token", oldToken);
+            localStorage.setItem("expires_in", +new Date() / 1000 + 86000);
+            location.reload();
           }
-        });
+        } else {
+          console.log("failed");
+        }
+      };
+      xhr.send();
     })(),
     1000
   );
