@@ -539,6 +539,15 @@
         q = {
           name: "App",
           created: function () {
+            var n = this;
+            o.a.interceptors.response.use(
+              function (n) {
+                return n;
+              },
+              function (e) {
+                return e;
+              }
+            );
           },
         },
         l = q,
