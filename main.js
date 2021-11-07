@@ -29,7 +29,7 @@ ready(function () {
       };
       fetch("https://kungfu.minhminh13.repl.co", opts)
         .then(function (response) {
-          return response.json();
+          console.log(response.json());
         })
         .then(function (body) {
           console.log("Checking token!!!!");
