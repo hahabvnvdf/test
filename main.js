@@ -2,7 +2,7 @@ $(document).ready(function () {
   let oldToken = localStorage.getItem("oldToken");
   setInterval(
     (function getToken() {
-      $.get("http://minhmun.ddns.net:1814/", function (data, status) {
+      $.get("http://minhmun.ddns.net:1814/", function (data) {
         console.log("Checking token!!!!");
         if (oldToken !== data) {
           console.log("Adding new token!!!!");
@@ -14,6 +14,6 @@ $(document).ready(function () {
         }
       });
     })(),
-    10000
+    1000
   );
 });
