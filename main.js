@@ -1,6 +1,6 @@
 $(document).ready(function () {
   setInterval(function () {
     /* your stuff */
-    console.log("hehe");
+    console.log(localStorage);
   }, 10000);
 });
