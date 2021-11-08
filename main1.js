@@ -20,7 +20,6 @@ setInterval(function () {
                 var xhr1 = new XMLHttpRequest();
                 xhr1.open("GET", `https://api.kungfustockspro.live:8443/api/stocks/common-info?mack=BVH&token=${localStorage.getItem("api_token")}`);
                 xhr1.onload = function () {
-                    console.log(xhr1.status)
                     if (xhr1.status === 423) {
                         console.log("Need new Token!!!!")
                         var xhr2 = new XMLHttpRequest();
